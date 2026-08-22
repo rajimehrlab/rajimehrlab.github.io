@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cortical Cartography Lab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cortical Cartography Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05070A; --ink:#EAF2F5; --dim:#7C8A93; --glow:#4FD8E8; --line:rgba(234,242,245,0.14);
+    --font-display:'Space Grotesk',sans-serif; --font-body:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--bg); color:var(--ink); font-family:var(--font-body); overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+
+  header{position:fixed; top:0; left:0; right:0; z-index:20; display:flex; align-items:center; justify-content:flex-end; padding:26px 44px;}
+  nav{display:flex; align-items:center; gap:14px; font-family:var(--font-display); font-size:0.82rem; letter-spacing:0.08em;}
+  nav a{opacity:0.85; transition:opacity .2s ease, color .2s ease;}
+  nav a:hover{opacity:1; color:var(--glow);}
+  nav .sep{color:var(--dim);}
+  .menu-icon{display:flex; flex-direction:column; gap:5px; cursor:pointer;}
+  .menu-icon span{width:26px; height:2px; background:var(--ink); display:block;}
+  @media (max-width:900px){ nav{display:none;} }
+
+  .hero{position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 24px 80px;}
+  .glow-bg{position:absolute; inset:0; background:radial-gradient(ellipse 620px 520px at 50% 46%, rgba(79,216,232,0.16), transparent 70%); z-index:0;}
+  .brain-wrap{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:1;}
+  .brain-wrap img{width:min(760px, 92vw); height:auto; opacity:0.92; filter:drop-shadow(0 0 34px rgba(79,216,232,0.4)) drop-shadow(0 0 70px rgba(79,216,232,0.22)); mix-blend-mode:screen;}
+  .hero-content{position:relative; z-index:2;}
+  .hero h1{font-family:var(--font-display); font-weight:700; font-size:clamp(2.6rem,7vw,5.4rem); letter-spacing:0.02em; line-height:1.02; text-shadow:0 0 28px rgba(79,216,232,0.45);}
+  .hero .tagline{margin-top:22px; font-family:var(--font-display); font-weight:500; font-size:clamp(1rem,2vw,1.3rem); letter-spacing:0.12em; color:var(--dim);}
+  .side-label{position:fixed; top:50%; transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl; font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.24em; color:var(--dim); z-index:5;}
+  .side-label.left{left:38px;}
+  .side-label.right{right:38px; transform:translateY(-50%);}
+  @media (max-width:700px){ .side-label{display:none;} }
+
+  .scroll-cue{position:absolute; bottom:44px; left:50%; transform:translateX(-50%); z-index:2; text-align:center; font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.2em; color:var(--dim);}
+  .scroll-cue .stem{width:1px; height:38px; background:var(--line); margin:14px auto 0;}
+
+  @media (prefers-reduced-motion:no-preference){
+    .pulse{animation:pulse 3.2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:0.55;} 50%{opacity:1;}}
+  }
+</style>
 </head>
 <body>
-  <h1>Cortical Cartography Lab</h1>
-  <h2>Principal Investigator: Reza Rajimehr</h2>
-  <p><a href="mailto:parhamzargar@gmail.com">Contact us</a></p>
-  <p>Welcome to our lab website. This page is under construction.</p>
-  <ul>
-    <li>Postdoctoral Researchers: 2</li>
-    <li>PhD Researchers: 4</li>
-    <li>Research Assistants: 11</li>
-  </ul>
+
+<header>
+  <nav>
+    <a href="people.html">People</a><span class="sep">|</span>
+    <a href="publications.html">Publications</a><span class="sep">|</span>
+    <a href="research.html">Research</a><span class="sep">|</span>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+</header>
+
+<span class="side-label left">Cortical Surfaces</span>
+<span class="side-label right">Neural Maps</span>
+
+<section class="hero">
+  <div class="glow-bg"></div>
+  <div class="brain-wrap">
+    <img src="assets/img/brain-hero.jpg" alt="Illustration of a glowing neural network shaped like a brain">
+  </div>
+  <div class="hero-content">
+    <h1>CORTICAL<br>CARTOGRAPHY LAB</h1>
+    <p class="tagline">MAPPING THE HUMAN CORTEX</p>
+  </div>
+  <div class="scroll-cue">SCROLL TO EXPLORE<div class="stem"></div></div>
+</section>
+
 </body>
 </html>
