@@ -25,7 +25,7 @@
   .menu-icon span{width:26px; height:2px; background:var(--ink); display:block;}
   @media (max-width:1100px){ nav{display:none;} }
 
-  .hero{position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 24px 80px;}
+  .hero{position:relative; min-height:100vh; text-align:center; padding:0;}
   .glow-bg{position:absolute; inset:0; background:radial-gradient(ellipse 620px 520px at 50% 46%, rgba(79,216,232,0.16), transparent 70%); z-index:0;}
   .brain-wrap{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:1;}
   .brain-wrap img{
@@ -35,7 +35,8 @@
     -webkit-mask-image:radial-gradient(ellipse 55% 55% at 50% 50%, black 35%, transparent 72%);
     mask-image:radial-gradient(ellipse 55% 55% at 50% 50%, black 35%, transparent 72%);
   }
-  .hero-content{position:relative; z-index:2;}
+  .hero-title{position:absolute; top:120px; left:50%; transform:translateX(-50%); z-index:2; width:100%; padding:0 24px;}
+  .hero-tagline-wrap{position:absolute; bottom:120px; left:50%; transform:translateX(-50%); z-index:2; width:100%;}
   .hero h1{font-family:var(--font-display); font-weight:700; font-size:clamp(1.8rem,5.2vw,4rem); letter-spacing:0.02em; line-height:1.08; text-shadow:0 0 28px rgba(79,216,232,0.45);}
   .hero h1 .lead{display:block; font-weight:500; font-size:0.42em; letter-spacing:0.14em; color:var(--dim); text-shadow:none; margin-bottom:10px;}
   .hero .tagline{margin-top:22px; font-family:var(--font-display); font-weight:500; font-size:clamp(1rem,2vw,1.3rem); letter-spacing:0.12em; color:var(--dim);}
@@ -67,18 +68,20 @@
   <div class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></div>
 </header>
 
-<span class="side-label left">Cortical Surfaces</span>
-<span class="side-label right">Neural Maps</span>
-
 <section class="hero">
   <div class="glow-bg"></div>
   <div class="brain-wrap">
     <img src="assets/img/brain-hero.jpg" alt="Illustration of a glowing neural network shaped like a brain">
   </div>
-  <div class="hero-content">
+
+  <div class="hero-title">
     <h1><span class="lead">Reza Rajimehr's</span>CORTICAL CARTOGRAPHY LAB</h1>
-    <p class="tagline">MAPPING THE HUMAN CORTEX</p>
   </div>
+
+  <div class="hero-tagline-wrap">
+    <p class="tagline">MAPPING THE HUMAN BRAIN</p>
+  </div>
+
   <div class="scroll-cue">SCROLL TO EXPLORE<div class="stem"></div></div>
 </section>
 
